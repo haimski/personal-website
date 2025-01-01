@@ -1,7 +1,7 @@
 import ServicesTitle from "./ServicesTitle.tsx";
 import ServiceBlock from "./ServiceBlock.tsx";
 
-const Services = () => {
+const ServicesComponent = () => {
     const servicesData = [
         {
             title: 'Web Development',
@@ -66,4 +66,4 @@ const Services = () => {
     )
 }
 
-export default Services;
+export default ServicesComponent;
