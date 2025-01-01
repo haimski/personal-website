@@ -1,5 +1,6 @@
 import ServicesTitle from "./ServicesTitle.tsx";
 import ServiceBlock from "./ServiceBlock.tsx";
+import './style.scss';
 
 const ServicesComponent = () => {
     const servicesData = [
@@ -46,10 +47,10 @@ const ServicesComponent = () => {
     ]
 
     return(
-        <div className="ig dg _d de">
+        <div className="services">
             <ServicesTitle />
 
-            <div className="mb hd ca">
+            <div className="services-component">
                 {
                     servicesData?.map((service) =>{
                         return (

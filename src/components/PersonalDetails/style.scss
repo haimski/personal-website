@@ -1,0 +1,39 @@
+.personal-details {
+  &-title {
+    --tw-text-opacity: 1;
+    color: rgb(74 108 247 / var(--tw-text-opacity));
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.75rem;
+    &-fullname {
+      line-height: 50px;
+      font-size: 45px;
+      display: block;
+      color: black;
+    }
+  }
+  &-profession {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    --tw-text-opacity: 1;
+    color: rgb(149 156 177 / var(--tw-text-opacity));
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    &-title {
+      --tw-text-opacity: 1;
+      color: rgb(9 14 52 / var(--tw-text-opacity));
+    }
+  }
+  &-description {
+    line-height: 1.625;
+    font-weight: 500;
+    font-size: 1rem;
+    max-width: 470px;
+    margin-bottom: 2.75rem;
+  }
+  &-cta {
+    align-items: center;
+    display: flex;
+  }
+}

@@ -2,8 +2,14 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {},
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+      import('@tailwindcss/forms'),
+      import('@tailwindcss/typography')
+  ],
 }
 

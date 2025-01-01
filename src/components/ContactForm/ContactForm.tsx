@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { InputField, Textarea, Button } from "../../generic-components";
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -24,72 +25,76 @@ const ContactForm = () => {
     };
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your name"
-                    value={formData.name}
-                    onChange={(e) => handleChange(e)}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                />
+            <div className="flex flex-row">
+                <div className="w-1/2 px-5">
+                    <InputField
+                        label=""
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        value={formData.name}
+                        onChange={() =>  handleChange}
+                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                </div>
+                <div className="w-1/2 px-5">
+                    <InputField
+                        label=""
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        value={formData.email}
+                        onChange={() => handleChange}
+                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                </div>
             </div>
-            <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    value={formData.email}
-                    onChange={(e) => handleChange(e)}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                />
+            <div className="flex flex-row">
+                <div className="w-1/2 px-5">
+                    <InputField
+                        label=""
+                        type="text"
+                        id="company"
+                        name="company"
+                        placeholder="Enter your company"
+                        value={formData.company}
+                        onChange={() => handleChange}
+                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                </div>
+                <div className="w-1/2 px-5">
+                    <InputField
+                        label=""
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        value={formData.phone}
+                        onChange={() => handleChange}
+                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                </div>
             </div>
-            <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700">Company</label>
-                <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    placeholder="Enter your company"
-                    value={formData.company}
-                    onChange={(e) => handleChange(e)}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                />
-            </div>
-            <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                    value={formData.phone}
-                    onChange={(e) => handleChange(e)}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                />
-            </div>
-            <div>
-                <label htmlFor="comments" className="block text-sm font-medium text-gray-700">Comments</label>
-                <textarea
+            <div className="px-5">
+                <Textarea
+                    label=""
                     id="comments"
                     name="comments"
                     placeholder="Enter your comments"
                     value={formData.comments}
-                    onChange={(e) => handleChange(e)}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    onChange={() => handleChange}
+                    className="border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500"
                 />
             </div>
-            <div>
-                <button
+            <div className="px-5">
+                <Button
                     type="submit"
-                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    Submit
-                </button>
+                    text="Submit"
+                    onClick={() => handleSubmit}
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-4"
+                />
             </div>
         </form>
     );

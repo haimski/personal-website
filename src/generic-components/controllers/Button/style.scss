@@ -1,0 +1,17 @@
+button {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  margin-right: 15px;
+  border-radius: 30px;
+  &.black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(9 14 52 / var(--tw-bg-opacity));
+  }
+}

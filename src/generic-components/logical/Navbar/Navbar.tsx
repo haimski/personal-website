@@ -12,10 +12,12 @@ import Button from '@mui/material/Button';
 //import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { DownloadCVButton } from '../../../generic-components';
+import './style.scss';
 
 //const pages = ['Products', 'Pricing', 'Blog'];
-const pages = ['Home', 'Contact', 'Services'];
-//const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Home', 'Services', 'Contact'];
+//const settings = ['Profile', 'Account', 'Dashboard', 'logout'];
 
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -52,11 +54,11 @@ function ResponsiveAppBar() {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: '#000000',
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        HBZ
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -90,7 +92,7 @@ function ResponsiveAppBar() {
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography
                                         component="a"
-                                        href={page.toLowerCase()}
+                                        href={page === 'Home' ? '/' : page.toLowerCase()}
                                         sx={{ textAlign: 'center' }}>{page}</Typography>
                                 </MenuItem>
                             ))}
@@ -109,17 +111,17 @@ function ResponsiveAppBar() {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: '#000000',
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        HBZ
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
                                 component="a"
-                                href={page.toLowerCase()}
+                                href={page === 'Home' ? '/' : page.toLowerCase()}
                                 key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
@@ -127,6 +129,9 @@ function ResponsiveAppBar() {
                                 {page}
                             </Button>
                         ))}
+                    </Box>
+                    <Box>
+                        <DownloadCVButton />
                     </Box>
                     {/*<Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">

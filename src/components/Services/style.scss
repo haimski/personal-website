@@ -1,0 +1,49 @@
+.services {
+  &-title {
+    text-align: center;
+    padding: 1em;
+    max-width: 600px;
+    margin: 50px auto 70px;
+    .sub-title {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      --tw-text-opacity: 1;
+      color: rgb(74 108 247 / var(--tw-text-opacity));
+      margin-bottom: 0.5rem;
+    }
+    .main-title {
+      font-size: 45px;
+      line-height: 2.5rem;
+      --tw-text-opacity: 1;
+      color: rgb(9 14 52 / var(--tw-text-opacity));
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+    .description {
+      --tw-text-opacity: 1;
+      color: rgb(149 156 177 / var(--tw-text-opacity));
+      font-weight: 500;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+  &-component {
+    display: flex;
+    justify-content: center;
+  }
+  &-block {
+    margin: 1em;
+    text-align: center;
+    .icon-wrapper {
+      svg {
+        margin: 0 auto;
+      }
+    }
+    .block-title {
+      --tw-text-opacity: 1;
+      color: rgb(9 14 52 / var(--tw-text-opacity));
+      font-weight: 700;
+      margin: 0.75rem;
+    }
+  }
+}
