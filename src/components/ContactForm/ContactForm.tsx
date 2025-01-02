@@ -1,16 +1,10 @@
 import { FC, useState } from 'react';
+import { Grid2 as Grid } from "@mui/material";
 import { InputField, Textarea, Button } from "../../generic-components";
 import { isValidEmail, isValidPhoneNumber } from './../../Utils';
+import './style.scss';
 
-export interface ContactFormProps {
-    formData: {
-        name: string;
-        email: string;
-        company: string;
-        phone: string;
-        comments: string;
-    }
-}
+export interface ContactFormProps {}
 
 const ContactForm: FC<ContactFormProps> = () => {
     const [formData, setFormData] = useState({
@@ -74,9 +68,9 @@ const ContactForm: FC<ContactFormProps> = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="flex flex-row">
-                <div className="w-1/2 px-5">
+        <form onSubmit={handleSubmit} className="space-y-4 contact-form">
+            <Grid container className="flex flex-row">
+                <Grid size={{xs: 12, md: 6}} className="w-1/2 px-5 grid-1">
                     <InputField
                         label=""
                         type="text"
@@ -90,8 +84,8 @@ const ContactForm: FC<ContactFormProps> = () => {
                         errorMessage={touchedFields.fullName && fullName === '' ? 'Name is required' : ''}
                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
-                </div>
-                <div className="w-1/2 px-5">
+                </Grid>
+                <Grid size={{xs: 12, md: 6}} className="w-1/2 px-5 grid-2">
                     <InputField
                         label=""
                         type="email"
@@ -105,10 +99,10 @@ const ContactForm: FC<ContactFormProps> = () => {
                         errorMessage={handleEmailValidation(email)}
                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
-                </div>
-            </div>
-            <div className="flex flex-row">
-                <div className="w-1/2 px-5">
+                </Grid>
+            </Grid>
+            <Grid container className="flex flex-row">
+                <Grid size={{xs: 12, md: 6}} className="w-1/2 px-5 grid-1">
                     <InputField
                         label=""
                         type="text"
@@ -122,8 +116,8 @@ const ContactForm: FC<ContactFormProps> = () => {
                         errorMessage={touchedFields.company && !company ? "Company is required" : ""}
                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
-                </div>
-                <div className="w-1/2 px-5">
+                </Grid>
+                <Grid size={{xs: 12, md: 6}} className="w-1/2 px-5 grid-2">
                     <InputField
                         label=""
                         type="tel"
@@ -137,9 +131,9 @@ const ContactForm: FC<ContactFormProps> = () => {
                         errorMessage={touchedFields.phone && !phone ? "Phone number is required" : ""}
                         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
-                </div>
-            </div>
-            <div className="px-5">
+                </Grid>
+            </Grid>
+            <div className="px-5 textarea-wrapper">
                 <Textarea
                     label=""
                     id="comments"
@@ -153,7 +147,7 @@ const ContactForm: FC<ContactFormProps> = () => {
                     className="border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500"
                 />
             </div>
-            <div className="px-5 flex">
+            <div className="px-5 flex button-wrapper">
                 <Button
                     type="submit"
                     text="Submit"

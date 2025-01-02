@@ -7,9 +7,9 @@ const Contact = () => {
             <SectionTitle
                 subtitle="Contact With Me"
                 mainTitle="Have an Project in Mind?"
-                description="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+                description="looking for a professional web developer to build your website or web application? Contact me and let's discuss your project."
             />
-            <div className="form-container w-3/4 mr-auto ml-auto">
+            <div className="form-container lg:w-3/4 sm:1 mr-auto ml-auto">
                 <ContactForm />
             </div>
         </div>

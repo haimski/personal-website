@@ -1,3 +1,4 @@
+import { Grid2 as Grid } from "@mui/material";
 import ServicesTitle from "./ServicesTitle.tsx";
 import ServiceBlock from "./ServiceBlock.tsx";
 import './style.scss';
@@ -6,7 +7,7 @@ const ServicesComponent = () => {
     const servicesData = [
         {
             title: 'Web Development',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ligulavel in.',
+            description: 'With a refined approach to web development, I deliver sophisticated and high-quality digital solutions tailored to meet your unique needs.',
             svg: {
                 width: "35",
                 height: "33",
@@ -16,7 +17,7 @@ const ServicesComponent = () => {
         },
         {
             title: 'Visual Design',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ligulavel in.',
+            description: 'extensive experience in UX, and UI design, with a keen attention to detail to every project, ensuring exceptional and user-centric digital experiences.',
             svg: {
                 width: "36",
                 height: "36",
@@ -26,7 +27,7 @@ const ServicesComponent = () => {
         },
         {
             title: 'DevOps',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ligulavel in.',
+            description: 'DevOps, Is the art of optimizing development workflows, automating processes, and ensuring seamless integration and delivery of software solutions.',
             svg: {
                 width: "40",
                 height: "25",
@@ -36,7 +37,7 @@ const ServicesComponent = () => {
         },
         {
             title: 'Management',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ligulavel in.',
+            description: 'Expert project and product web management services to streamline your digital operations and enhance your online presence.',
             svg: {
                 width: "30",
                 height: "30",
@@ -50,7 +51,7 @@ const ServicesComponent = () => {
         <div className="services">
             <ServicesTitle />
 
-            <div className="services-component">
+            <Grid container className="services-component">
                 {
                     servicesData?.map((service) =>{
                         return (
@@ -62,7 +63,7 @@ const ServicesComponent = () => {
                         )
                     })
                 }
-            </div>
+            </Grid>
         </div>
     )
 }

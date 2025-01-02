@@ -1,10 +1,11 @@
+import { Grid2 as Grid } from "@mui/material";
 import ServicesComponent from '../components/Services/ServicesComponent';
 
 const Services = () => {
     return (
-        <div className="container xl mt-20">
+        <Grid container className="container xl mt-20">
             <ServicesComponent />
-        </div>
+        </Grid>
     );
 }
 

@@ -6,17 +6,17 @@ import './style.scss';
 
 const Home = () => {
     return (
-        <div className="home  container xl mt-20 flex space-x-4">
-            <Grid size={6}>
+        <Grid container className="home  container xl mt-20 flex space-x-4">
+            <Grid size={{xs: 12, md: 6}} spacing={2}>
                 <PersonalDetailsMainView />
             </Grid>
-            <Grid size={6}>
+            <Grid size={{xs: 12, md: 6}} spacing={2}>
                 <MainImage
                     src={Image}
                     alt='HBZ'
                 />
             </Grid>
-        </div>
+        </Grid>
     );
 }
 

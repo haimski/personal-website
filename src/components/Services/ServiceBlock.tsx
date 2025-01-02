@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Grid2 as Grid } from "@mui/material";
 
 export interface ServiceBlockProps {
     title: string;
@@ -13,7 +14,7 @@ export interface ServiceBlockProps {
 
 const ServiceBlock: FC<ServiceBlockProps> = ({ title, description, svgData }) => {
     return (
-        <div className="services-block">
+        <Grid size={{ xs: 12, md: 3 }} spacing={2} className="services-block">
             <div>
                 <div className="icon-wrapper">
                     <svg width={svgData.width} height={svgData.height} viewBox={svgData.viewBox} className="ye">
@@ -22,7 +23,7 @@ const ServiceBlock: FC<ServiceBlockProps> = ({ title, description, svgData }) =>
                 </div>
                 <h3 className="block-title">{title}</h3>
                 <p>{description}</p>
-                <div>
+                {/*<div>
                   <span>
                     <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle opacity="0.05" cx="156.5" cy="-47.5" r="156.5" fill="white"></circle>
@@ -57,9 +58,9 @@ const ServiceBlock: FC<ServiceBlockProps> = ({ title, description, svgData }) =>
                               fill="white"></circle>
                     </svg>
                   </span>
-                </div>
+                </div>*/}
             </div>
-        </div>
+        </Grid>
     );
 }
 

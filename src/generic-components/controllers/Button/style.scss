@@ -10,6 +10,8 @@ button {
   color: rgb(255 255 255 / var(--tw-text-opacity));
   margin-right: 15px;
   border-radius: 30px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   &.black {
     --tw-bg-opacity: 1;
     background-color: rgb(9 14 52 / var(--tw-bg-opacity));
