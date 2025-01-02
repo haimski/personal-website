@@ -1,4 +1,5 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
+import axios from 'axios';
 import { Grid2 as Grid } from "@mui/material";
 import { InputField, Textarea, Button } from "../../generic-components";
 import { isValidEmail, isValidPhoneNumber } from './../../Utils';
@@ -28,6 +29,21 @@ const ContactForm: FC<ContactFormProps> = () => {
         comments: false
     });
 
+    useEffect(() => {
+        const sendFormData = async (data: any) => {
+            try {
+                await axios.post('/submit-form', data);
+                alert('Form details sent to your email.');
+            } catch (error) {
+                console.error('Error sending form details:', error);
+            }
+        };
+
+        if (formData.name && formData.email && formData.company && formData.phone && formData.comments) {
+            sendFormData(formData);
+        }
+    }, [formData]);
+
     const handleSubmit = (e: any) => {
         e.preventDefault();
 
@@ -36,17 +52,16 @@ const ContactForm: FC<ContactFormProps> = () => {
             return;
         } else {
             setSubmitErrorMessage('');
+            setFormData({
+                name: fullName,
+                email: email,
+                company: company,
+                phone: phone,
+                comments: comments
+            })
+            // Handle form submission
+            console.log(formData);
         }
-
-        setFormData({
-            name: fullName,
-            email: email,
-            company: company,
-            phone: phone,
-            comments: comments
-        })
-        // Handle form submission
-        console.log(formData);
     };
 
     const handleEmailValidation = (email: string) => {

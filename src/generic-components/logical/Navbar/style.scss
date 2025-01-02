@@ -12,4 +12,9 @@
       }
     }
   };
+  @media (max-width: 900px) {
+    .MuiBox-root {
+      justify-content: unset;
+    }
+  }
 };
