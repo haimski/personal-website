@@ -8,9 +8,7 @@ header {
       justify-content: center;
 
       .MuiButton-root {
-        &.css-bdcj6b-MuiButtonBase-root-MuiButton-root {
-          color: #000000;
-        }
+          color: #000000 !important;
       }
     };
     @media (max-width: 900px) {
