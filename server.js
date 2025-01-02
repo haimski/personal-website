@@ -1,18 +1,21 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import sendEmail from './src/sendMail.js';
+import dotenv from 'dotenv';
+import handler from './src/sendMail.js';
+
+dotenv.config();
 
 const app = express();
-const port = 3001; // You can choose any port
+const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 
-app.post('/submit-form', (req, res) => {
-    const formData = req.body;
-    sendEmail(formData);
-    res.send('Form details sent to your email.');
+app.get('/', (req, res) => {
+    res.send('Welcome to the server!');
 });
 
+app.post('/submit-form', handler);
+
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`);
 });
