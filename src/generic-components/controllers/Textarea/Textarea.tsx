@@ -1,4 +1,5 @@
 import './style.scss';
+import React from "react";
 
 export interface TextareaProps {
     label: string;
@@ -7,7 +8,10 @@ export interface TextareaProps {
     placeholder?: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
     className: string;
+    isError?: boolean;
+    errorMessage?: string;
 }
 
 const Textarea = ({ label = '', ...props }) => {
@@ -17,7 +21,10 @@ const Textarea = ({ label = '', ...props }) => {
         placeholder = '',
         value,
         onChange,
-        className
+        onBlur,
+        className,
+        isError = false,
+        errorMessage = ''
     } = props;
     return (
         <div>
@@ -28,8 +35,12 @@ const Textarea = ({ label = '', ...props }) => {
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
+                onBlur={onBlur}
                 className={className}
             />
+            <div className="text-red-500 text-xs">
+                {isError && errorMessage}
+            </div>
         </div>
     )
 }

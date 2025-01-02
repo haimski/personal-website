@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import './style.scss';
 
 export interface InputFieldProps {
@@ -9,7 +9,10 @@ export interface InputFieldProps {
     placeholder?: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
     className: string;
+    isError?: boolean;
+    errorMessage?: string;
 }
 
 const InputField: FC<InputFieldProps> = ({ label, ...props }) => {
@@ -18,9 +21,12 @@ const InputField: FC<InputFieldProps> = ({ label, ...props }) => {
         id,
         name = 'name',
         placeholder = '',
-        value,
+        value= '',
         onChange,
-        className
+        onBlur,
+        className,
+        isError = false,
+        errorMessage = ''
     } = props;
 
     return (
@@ -33,8 +39,12 @@ const InputField: FC<InputFieldProps> = ({ label, ...props }) => {
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
+                onBlur={onBlur}
                 className={`input-field ${className}`}
             />
+            <div className="text-red-500 text-xs">
+                {isError && errorMessage}
+            </div>
         </div>
     )
 }
