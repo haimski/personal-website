@@ -6,7 +6,7 @@ import './style.scss';
 
 const Home = () => {
     return (
-        <Grid container className="home  container xl mt-20 flex space-x-4">
+        <Grid container className="home container xl mt-5 flex space-x-4">
             <Grid size={{xs: 12, md: 6}} spacing={2}>
                 <PersonalDetailsMainView />
             </Grid>
