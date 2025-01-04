@@ -16,7 +16,7 @@ import { DownloadCVButton } from '../../../generic-components';
 import './style.scss';
 
 //const pages = ['Products', 'Pricing', 'Blog'];
-const pages = ['Home', 'Services', 'Contact'];
+const pages = ['Home', 'Services', 'Works', 'Contact'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'logout'];
 
 function ResponsiveAppBar() {

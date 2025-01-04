@@ -8,8 +8,8 @@ export interface MainImageProps {
 
 const MainImage: FC<MainImageProps> = ({ src = '', alt = '' }) => {
     return (
-        <Box>
-            <img src={src} alt={alt} />
+        <Box className="xs:mb-4 w-full">
+            <img src={src} alt={alt} className="w-full" />
         </Box>
     );
 }

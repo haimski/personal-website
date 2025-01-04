@@ -36,7 +36,7 @@ const DownloadCVButton = () => {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        You are not authorized to download the CV file. If you wish to have my CV file,
+                        My CV file is not yet available here. If you wish to have my CV file,
                         you can contact me via the <a href="/contact" className="text-blue-500 underline">contact form</a> in this website or <a href="mailto:benzak@gmail.com" className="text-blue-500 underline">send me email</a>.
                     </DialogContentText>
                 </DialogContent>

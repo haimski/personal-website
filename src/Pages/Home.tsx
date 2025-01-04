@@ -10,7 +10,7 @@ const Home = () => {
             <Grid size={{xs: 12, md: 6}} spacing={2}>
                 <PersonalDetailsMainView />
             </Grid>
-            <Grid size={{xs: 12, md: 6}} spacing={2}>
+            <Grid size={{xs: 12, md: 6}} spacing={2} className="flex justify-end">
                 <MainImage
                     src={Image}
                     alt='HBZ'

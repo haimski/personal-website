@@ -1,0 +1,13 @@
+.works-gallery {
+  padding-left: 2rem;
+    padding-right: 2rem;
+  &.gap-override {
+    column-gap: 5%;
+  }
+  &-column {
+    margin-bottom: 10%;
+    &__title  {
+      margin-top: 1em;
+    }
+  }
+}
