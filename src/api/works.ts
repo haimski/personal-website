@@ -3,7 +3,7 @@ const works = [
         id: 1,
         title: "Vodafone Italy Self service Portal",
         description: "Self Service portal for telecom customers, including a shop for deveices and accessories.",
-        imageUrl: "/public/works-gallery/SS_Login.jpg"
+        imageUrl: "https://funtech.blog/personal-site-cdn/works-gallery/SS_Login.jpg"
     },
     {
         id: 2,
