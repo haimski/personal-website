@@ -12,6 +12,15 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.json());
 app.use(cors());
 
+// Disable caching for images
+app.use('src/assets', express.static(path.join(__dirname, 'images'), {
+    etag: false,
+    lastModified: false,
+    setHeaders: (res, path) => {
+        res.setHeader('Cache-Control', 'no-store');
+    }
+}));
+
 app.get('/', (req, res) => {
     res.send('Welcome to the server!');
 });
