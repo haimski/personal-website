@@ -11,13 +11,7 @@ import { InputField, Textarea, Button } from "../../generic-components";
 import { isValidEmail, isValidPhoneNumber } from './../../Utils';
 import './style.scss';
 
-export interface ContactFormProps {
-    fullName: string;
-    email: string;
-    company: string;
-    phone: string|number;
-    comments: string;
-}
+export interface ContactFormProps {}
 
 const ContactForm: FC<ContactFormProps> = () => {
     const [formData, setFormData] = useState({
