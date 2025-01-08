@@ -32,7 +32,7 @@ const ContactForm: FC<ContactFormProps> = () => {
     useEffect(() => {
         const sendFormData = async (data: any) => {
             try {
-                await axios.post('http://localhost:3001/submit-form', data);
+                await axios.post('/submit-form', data);
                 alert('Form details sent to your email.');
             } catch (error) {
                 console.error('Error sending form details:', error);
