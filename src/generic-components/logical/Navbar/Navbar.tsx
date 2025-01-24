@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { DownloadCVButton } from '../../../generic-components';
+import { useFixedHeader } from '../../../hooks';
 import './style.scss';
 
 //const pages = ['Products', 'Pricing', 'Blog'];
@@ -22,6 +23,7 @@ const pages = ['Home', 'Services', 'Works', 'Contact'];
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     //const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+    const isFixedHeader = useFixedHeader();
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
@@ -39,7 +41,7 @@ function ResponsiveAppBar() {
     };*/
 
     return (
-        <AppBar position="static">
+        <AppBar position={!isFixedHeader ? 'static' : 'fixed'} className={!isFixedHeader ? '' : 'fixed'}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
