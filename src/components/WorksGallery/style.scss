@@ -6,6 +6,17 @@
   }
   &-column {
     margin-bottom: 10%;
+    &__link {
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+      &:hover {
+        opacity: 0.95;
+      }
+    }
+    &__image {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+    }
     &__title  {
       margin-top: 1em;
     }

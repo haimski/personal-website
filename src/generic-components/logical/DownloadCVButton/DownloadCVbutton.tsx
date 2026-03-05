@@ -1,51 +1,15 @@
-import { Button as GenericButton } from './../../../generic-components';
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+const LINKEDIN_PROFILE_URL = 'https://www.linkedin.com/in/haimbz/';
 
 const DownloadCVButton = () => {
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
     return (
-        <>
-            <GenericButton
-                text="Download CV"
-                onClick={() => handleClickOpen()}
-                className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-4"
-            />
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title">
-                    {"CV file is not Available"}
-                </DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        My CV file is not yet available here. If you wish to have my CV file,
-                        you can contact me via the <a href="/contact" className="text-blue-500 underline">contact form</a> in this website or <a href="mailto:benzak@gmail.com" className="text-blue-500 underline">send me email</a>.
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose}>Close</Button>
-                </DialogActions>
-            </Dialog>
-        </>
-    )
+        <button
+            onClick={() => window.open(LINKEDIN_PROFILE_URL, '_blank')}
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 no-underline cursor-pointer select-none"
+        >
+            My Resume
+        </button>
+    );
 }
 
 export default DownloadCVButton;

@@ -3,7 +3,7 @@ import WorksGalleryComponent from '../components/WorksGallery/WorksGalleryCompon
 import works from '../api/works.ts';
 
 export interface WorksProps {
-    works: { id: number, title: string, description: string, imageUrl: string }[];
+    works: { id: number, title: string, description: string, imageUrl: string, url?: string }[];
 }
 
 const Works = () => {
