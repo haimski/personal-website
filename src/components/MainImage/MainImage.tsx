@@ -8,7 +8,7 @@ export interface MainImageProps {
 
 const MainImage: FC<MainImageProps> = ({ src = '', alt = '' }) => {
     return (
-        <Box className="xs:mb-4 w-full">
+        <Box className="xs:mb-4 w-full hero-img-wrapper">
             <img src={src} alt={alt} className="w-full" />
         </Box>
     );
